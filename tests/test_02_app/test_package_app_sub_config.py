@@ -28,10 +28,10 @@ def verify_container(container: DockerClient, response_text: str) -> None:
     assert config_data["workers"] == 3
     assert config_data["bind"] == "0.0.0.0:8000"
     logs = get_logs(container)
-    assert "Checking for script in /app/prestart.sh" in logs
-    assert "Running script /app/prestart.sh" in logs
+    assert "Checking for prestart script" in logs
+    assert "Running script /prestart.sh" in logs
     assert (
-        "Running inside /app/prestart.sh, you could add migrations to this file" in logs
+        "Running inside /prestart.sh, you could add migrations to this file" in logs
     )
     response = requests.get("http://127.0.0.1:8000")
     assert response.text == response_text
