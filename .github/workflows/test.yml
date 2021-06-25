@@ -35,9 +35,9 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v1
         with:
-          python-version: "3.7"
+          python-version: "3.8"
       - name: Install Dependencies
-        run: python3.7 -m pip install docker pytest
+        run: python3.8 -m pip install six docker pytest
       - name: Test Image
         run: bash scripts/test.sh
         env:
