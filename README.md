@@ -2,11 +2,9 @@
 
 ## Supported tags and respective `Dockerfile` links
 
-* [`python3.10`, `latest` _(Dockerfile)_](https://github.com/rushilsrivastava/uvicorn-gunicorn-docker/blob/master/docker-images/python3.10.dockerfile)
-* [`python3.10-slim` _(Dockerfile)_](https://github.com/rushilsrivastava/uvicorn-gunicorn-docker/blob/master/docker-images/python3.10-slim.dockerfile)
-* [`python3.10-alpine3.13` _(Dockerfile)_](https://github.com/rushilsrivastava/uvicorn-gunicorn-docker/blob/master/docker-images/python3.10-alpine3.13.dockerfile)
-* [`python3.9` _(Dockerfile)_](https://github.com/rushilsrivastava/uvicorn-gunicorn-docker/blob/master/docker-images/python3.9.dockerfile)
+* [`python3.9`, `latest` _(Dockerfile)_](https://github.com/rushilsrivastava/uvicorn-gunicorn-docker/blob/master/docker-images/python3.9.dockerfile)
 * [`python3.9-alpine3.13` _(Dockerfile)_](https://github.com/rushilsrivastava/uvicorn-gunicorn-docker/blob/master/docker-images/python3.9-alpine3.13.dockerfile)
+* [`python3.9-slim` _(Dockerfile)_](https://github.com/rushilsrivastava/uvicorn-gunicorn-docker/blob/master/docker-images/python3.9-slim.dockerfile)
 * [`python3.8` _(Dockerfile)_](https://github.com/rushilsrivastava/uvicorn-gunicorn-docker/blob/master/docker-images/python3.8.dockerfile)
 * [`python3.8-alpine3.10` _(Dockerfile)_](https://github.com/rushilsrivastava/uvicorn-gunicorn-docker/blob/master/docker-images/python3.8-alpine3.10.dockerfile)
 * [`python3.7` _(Dockerfile)_](https://github.com/rushilsrivastava/uvicorn-gunicorn-docker/blob/master/docker-images/python3.7.dockerfile)
