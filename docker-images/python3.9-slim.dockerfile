@@ -4,6 +4,8 @@ LABEL maintainer="Rushil Srivastava <rushu0922@gmail.com>"
 
 RUN pip install --no-cache-dir "uvicorn[standard]" gunicorn
 
+COPY ./prestart.sh /prestart.sh
+
 COPY ./start.sh /start.sh
 RUN chmod +x /start.sh
 

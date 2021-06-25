@@ -6,6 +6,8 @@ RUN apk add --no-cache --virtual .build-deps gcc libc-dev make \
     && pip install --no-cache-dir "uvicorn[standard]" gunicorn \
     && apk del .build-deps gcc libc-dev make
 
+COPY ./prestart.sh /prestart.sh
+
 COPY ./start.sh /start.sh
 RUN chmod +x /start.sh
 
