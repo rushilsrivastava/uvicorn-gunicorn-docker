@@ -2,7 +2,7 @@
 
 # uvicorn-gunicorn
 
-[**Docker**](https://www.docker.com/) image with [**Uvicorn**](https://www.uvicorn.org/) managed by [**Gunicorn**](https://gunicorn.org/) for high-performance web applications in **[Python](https://www.python.org/) 3.6 and above** with performance auto-tuning. Optionally in a slim version or based on Alpine Linux. This is a slightly opinionated fork from [tiangolo/uvicorn-docker-gunicorn](https://github.com/tiangolo/uvicorn-gunicorn-docker).
+[**Docker**](https://www.docker.com/) image with [**Uvicorn**](https://www.uvicorn.org/) managed by [**Gunicorn**](https://gunicorn.org/) for high-performance web applications in **[Python](https://www.python.org/) 3.6 and above** with performance auto-tuning. Optionally in a slim version or based on Alpine Linux. This is a slightly opinionated fork from [tiangolo/uvicorn-gunicorn-docker](https://github.com/tiangolo/uvicorn-gunicorn-docker).
 
 **GitHub repo**: [https://github.com/rushilsrivastava/uvicorn-gunicorn-docker](https://github.com/rushilsrivastava/uvicorn-gunicorn-docker)
 
