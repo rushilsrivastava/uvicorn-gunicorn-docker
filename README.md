@@ -1,5 +1,14 @@
 [![Test](https://github.com/rushilsrivastava/uvicorn-gunicorn-docker/workflows/Test/badge.svg)](https://github.com/rushilsrivastava/uvicorn-gunicorn-docker/actions?query=workflow%3ATest) [![Deploy](https://github.com/rushilsrivastava/uvicorn-gunicorn-docker/workflows/Deploy/badge.svg)](https://github.com/rushilsrivastava/uvicorn-gunicorn-docker/actions?query=workflow%3ADeploy)
 
+# uvicorn-gunicorn
+
+[**Docker**](https://www.docker.com/) image with [**Uvicorn**](https://www.uvicorn.org/) managed by [**Gunicorn**](https://gunicorn.org/) for high-performance web applications in **[Python](https://www.python.org/) 3.6 and above** with performance auto-tuning. Optionally in a slim version or based on Alpine Linux. This is a slightly opinionated fork from [tiangolo/uvicorn-docker-gunicorn](https://github.com/tiangolo/uvicorn-gunicorn-docker).
+
+**GitHub repo**: [https://github.com/rushilsrivastava/uvicorn-gunicorn-docker](https://github.com/rushilsrivastava/uvicorn-gunicorn-docker)
+
+**Docker Hub image**: [https://hub.docker.com/r/rushilsrivastava/uvicorn-gunicorn/](https://hub.docker.com/r/rushilsrivastava/uvicorn-gunicorn/)
+
+
 ## Supported tags and respective `Dockerfile` links
 
 * [`python3.9`, `latest` _(Dockerfile)_](https://github.com/rushilsrivastava/uvicorn-gunicorn-docker/blob/master/docker-images/python3.9.dockerfile)
@@ -12,15 +21,7 @@
 * [`python3.6` _(Dockerfile)_](https://github.com/rushilsrivastava/uvicorn-gunicorn-docker/blob/master/docker-images/python3.6.dockerfile)
 * [`python3.6-alpine3.8` _(Dockerfile)_](https://github.com/rushilsrivastava/uvicorn-gunicorn-docker/blob/master/docker-images/python3.6-alpine3.8.dockerfile)
 
-**Note**: Note: There are [tags for each build date](https://hub.docker.com/r/rushilsrivastava/uvicorn-gunicorn/tags). If you need to "pin" the Docker image version you use, you can select one of those tags. E.g. `tiangolo/uvicorn-gunicorn:python3.7-2019-10-15`.
-
-# uvicorn-gunicorn
-
-[**Docker**](https://www.docker.com/) image with [**Uvicorn**](https://www.uvicorn.org/) managed by [**Gunicorn**](https://gunicorn.org/) for high-performance web applications in **[Python](https://www.python.org/) 3.6 and above** with performance auto-tuning. Optionally in a slim version or based on Alpine Linux.
-
-**GitHub repo**: [https://github.com/tiangolo/uvicorn-gunicorn-docker](https://github.com/rushilsrivastava/uvicorn-gunicorn-docker)
-
-**Docker Hub image**: [https://hub.docker.com/r/rushilsrivastava/uvicorn-gunicorn/](https://hub.docker.com/r/rushilsrivastava/uvicorn-gunicorn/)
+**Note**: There are [tags for each build date](https://hub.docker.com/r/rushilsrivastava/uvicorn-gunicorn/tags). If you need to "pin" the Docker image version you use, you can select one of those tags. E.g. `rushilsrivastava/uvicorn-gunicorn:python3.7-2019-10-15`.
 
 ## Description
 
@@ -44,7 +45,7 @@ You can use **Gunicorn** to manage Uvicorn and run multiple of these concurrent 
 
 That way, you get the best of concurrency and parallelism.
 
-### `tiangolo/uvicorn-gunicorn`
+### `rushilsrivastava/uvicorn-gunicorn`
 
 This image will set a sensible configuration based on the server it is running on (the amount of CPU cores available) without making sacrifices.
 
@@ -74,7 +75,7 @@ If you are creating a new [**FastAPI**](https://fastapi.tiangolo.com/) web appli
 * You don't need to clone the GitHub repo. You can use this image as a base image for other images, using this in your `Dockerfile`:
 
 ```Dockerfile
-FROM tiangolo/uvicorn-gunicorn:python3.7
+FROM rushilsrivastava/uvicorn-gunicorn:python3.7
 
 COPY ./app /app
 ```
@@ -118,7 +119,7 @@ Let's say you have a project managed with [Poetry](https://python-poetry.org/), 
 Then you could have a `Dockerfile` like:
 
 ```Dockerfile
-FROM tiangolo/uvicorn-gunicorn:python3.7
+FROM rushilsrivastava/uvicorn-gunicorn:python3.7
 
 # Install Poetry
 RUN curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | POETRY_HOME=/opt/poetry python && \
