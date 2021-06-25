@@ -575,6 +575,7 @@ All the image tags, configurations, environment variables and application option
 
 ### Latest Changes
 
+* 🐛 Update initial args schema. PR [#2](https://github.com/rushilsrivastava/uvicorn-gunicorn-docker/pull/2) by [@rushilsrivastava](https://github.com/rushilsrivastava).
 * 🎨 Update authors, add new versions and organization. PR [#1](https://github.com/rushilsrivastava/uvicorn-gunicorn-docker/pull/1) by [@rushilsrivastava](https://github.com/rushilsrivastava).
 * 🔥 Remove unused Travis and old GitHub Actions configs. PR [#56](https://github.com/tiangolo/uvicorn-gunicorn-docker/pull/56) by [@tiangolo](https://github.com/tiangolo).
 * ✏️ Fix typo (type annotation) in tests. PR [#55](https://github.com/tiangolo/uvicorn-gunicorn-docker/pull/55) by [@tiangolo](https://github.com/tiangolo).
