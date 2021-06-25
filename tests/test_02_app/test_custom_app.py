@@ -42,11 +42,11 @@ def verify_container(
     [
         (
             {"MODULE_NAME": "custom_app.custom_main", "VARIABLE_NAME": "custom_var"},
-            "Running inside /app/prestart.sh, you could add migrations to this file",
+            "Running inside /prestart.sh, you could add migrations to this file",
         ),
         (
             {"APP_MODULE": "custom_app.custom_main:custom_var"},
-            "Running inside /app/prestart.sh, you could add migrations to this file",
+            "Running inside /prestart.sh, you could add migrations to this file",
         ),
         (
             {

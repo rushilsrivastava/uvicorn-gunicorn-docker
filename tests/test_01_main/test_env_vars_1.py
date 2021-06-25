@@ -31,10 +31,10 @@ def verify_container(container: DockerClient, response_text: str) -> None:
     assert config_data["errorlog"] is None
     assert config_data["accesslog"] is None
     logs = get_logs(container)
-    assert "Checking for script in /app/prestart.sh" in logs
-    assert "Running script /app/prestart.sh" in logs
+    assert "Checking for prestart script" in logs
+    assert "Running script /prestart.sh" in logs
     assert (
-        "Running inside /app/prestart.sh, you could add migrations to this file" in logs
+        "Running inside /prestart.sh, you could add migrations to this file" in logs
     )
     assert '"GET / HTTP/1.1" 200' not in logs
     assert "[INFO] Application startup complete." not in logs

@@ -33,10 +33,10 @@ def verify_container(container: Container, response_text: str) -> None:
     assert config_data["errorlog"] == "-"
     assert config_data["accesslog"] == "-"
     logs = get_logs(container)
-    assert "Checking for script in /app/prestart.sh" in logs
-    assert "Running script /app/prestart.sh" in logs
+    assert "Checking for prestart script" in logs
+    assert "Running script /prestart.sh" in logs
     assert (
-        "Running inside /app/prestart.sh, you could add migrations to this file" in logs
+        "Running inside /prestart.sh, you could add migrations to this file" in logs
     )
     assert '"GET / HTTP/1.1" 200' in logs
     assert "[INFO] Application startup complete." in logs

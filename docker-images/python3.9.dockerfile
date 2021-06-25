@@ -1,4 +1,4 @@
-FROM python:3.6
+FROM python:3.9
 
 LABEL maintainer="Rushil Srivastava <rushu0922@gmail.com>"
 
