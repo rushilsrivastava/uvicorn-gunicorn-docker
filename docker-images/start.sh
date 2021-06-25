@@ -19,6 +19,7 @@ else
 fi
 export GUNICORN_CONF=${GUNICORN_CONF:-$DEFAULT_GUNICORN_CONF}
 export WORKER_CLASS=${WORKER_CLASS:-"uvicorn.workers.UvicornWorker"}
+ADDITIONAL_ARGS=${ADDITIONAL_ARGS:---}
 
 # If there's a prestart.sh script in the / directory or other path specified, run it before starting
 echo "Checking for prestart script"
@@ -45,4 +46,4 @@ else
 fi
 
 # Start Gunicorn
-exec gunicorn -k "$WORKER_CLASS" -c "$GUNICORN_CONF" "$APP_MODULE"
+exec gunicorn -k "$WORKER_CLASS" -c "$GUNICORN_CONF" "$APP_MODULE" "$ADDITIONAL_ARGS"
