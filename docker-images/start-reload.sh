@@ -19,18 +19,18 @@ ADDITIONAL_ARGS=${ADDITIONAL_ARGS:---}
 echo "Checking for prestart script"
 
 if [ -f /app/prestart.sh ] ; then
-    PRE_START_EXEC=/app/prestart.sh
+    DEFAULT_PRE_START_PATH=/app/prestart.sh
 elif [ -f /app/app/prestart.sh ] ; then
-    PRE_START_EXEC=/app/app/prestart.sh
+    DEFAULT_PRE_START_PATH=/app/app/prestart.sh
 elif [ -f /app/scripts/prestart.sh ]; then
-    PRE_START_EXEC=/app/scripts/prestart.sh
+    DEFAULT_PRE_START_PATH=/app/scripts/prestart.sh
 elif [ -f /app/app/scripts/prestart.sh ]; then
-    PRE_START_EXEC=/app/app/scripts/prestart.sh
+    DEFAULT_PRE_START_PATH=/app/app/scripts/prestart.sh
 else
-    PRE_START_EXEC=/prestart.sh
+    DEFAULT_PRE_START_PATH=/prestart.sh
 fi
 
-PRE_START_PATH=${PRE_START_PATH:-$PRE_START_EXEC}
+PRE_START_PATH=${PRE_START_PATH:-$DEFAULT_PRE_START_PATH}
 
 if [ -f "$PRE_START_PATH" ] ; then
     echo "Running script $PRE_START_PATH"
