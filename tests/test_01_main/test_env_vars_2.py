@@ -32,9 +32,7 @@ def verify_container(container: Container) -> None:
     logs = get_logs(container)
     assert "Checking for prestart script" in logs
     assert "Running script /prestart.sh" in logs
-    assert (
-        "Running inside /prestart.sh, you could add migrations to this file" in logs
-    )
+    assert "Running inside /prestart.sh, you could add migrations to this file" in logs
     assert "loglevel: debug" in logs
     assert "Using worker: uvicorn.workers.UvicornH11Worker" in logs
 

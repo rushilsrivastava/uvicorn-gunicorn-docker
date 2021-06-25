@@ -18,7 +18,6 @@ client = docker.from_env()
 
 
 def verify_container(container: DockerClient, response_text: str) -> None:
-    config_data = get_config(container)
     process_names = get_process_names(container)
     config_data = get_config(container)
     assert config_data["workers"] == 1
@@ -30,9 +29,7 @@ def verify_container(container: DockerClient, response_text: str) -> None:
     logs = get_logs(container)
     assert "Checking for prestart script" in logs
     assert "Running script /prestart.sh" in logs
-    assert (
-        "Running inside /prestart.sh, you could add migrations to this file" in logs
-    )
+    assert "Running inside /prestart.sh, you could add migrations to this file" in logs
     response = requests.get("http://127.0.0.1:8000")
     assert response.text == response_text
 

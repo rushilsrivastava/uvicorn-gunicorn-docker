@@ -13,8 +13,8 @@ export APP_MODULE=${APP_MODULE:-"$MODULE_NAME:$VARIABLE_NAME"}
 HOST=${HOST:-0.0.0.0}
 PORT=${PORT:-80}
 LOG_LEVEL=${LOG_LEVEL:-info}
-UVICORN_ARGS=(UVICORN_ARGS)
-UVICORN_ARGS=${(UVICORN_ARGS[@]):---}
+UVICORN_ARGS=${UVICORN_ARGS:---}
+UVICORN_ARGS=(${UVICORN_ARGS})
 
 # If there's a prestart.sh script in the / directory or other path specified, run it before starting
 echo "Checking for prestart script"
