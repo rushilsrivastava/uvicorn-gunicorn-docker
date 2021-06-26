@@ -576,6 +576,7 @@ All the image tags, configurations, environment variables and application option
 
 ### Latest Changes
 
+* ✅ Add tests, update args. PR [#5](https://github.com/rushilsrivastava/uvicorn-gunicorn-docker/pull/5) by [@rushilsrivastava](https://github.com/rushilsrivastava).
 * 🐛 Convert env to args. PR [#4](https://github.com/rushilsrivastava/uvicorn-gunicorn-docker/pull/4) by [@rushilsrivastava](https://github.com/rushilsrivastava).
 * 📝 Cleanup README. PR [#3](https://github.com/rushilsrivastava/uvicorn-gunicorn-docker/pull/3) by [@rushilsrivastava](https://github.com/rushilsrivastava).
 * 🐛 Update initial args schema. PR [#2](https://github.com/rushilsrivastava/uvicorn-gunicorn-docker/pull/2) by [@rushilsrivastava](https://github.com/rushilsrivastava).
