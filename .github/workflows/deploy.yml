@@ -33,13 +33,27 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Set up Python
-        uses: actions/setup-python@v1
+        uses: actions/setup-python@v2
         with:
-          python-version: "3.8"
-      - name: Install Dependencies
-        run: python3.8 -m pip install six docker pytest
+          python-version: "3.9"
+      - name: Install and configure Poetry
+        uses: snok/install-poetry@v1.1.1
+        with:
+          virtualenvs-create: true
+          virtualenvs-in-project: true
+      - name: Load cached venv
+        id: cached-poetry-dependencies
+        uses: actions/cache@v2
+        with:
+          path: .venv
+          key: venv-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}
+      - name: Install poetry dependencies
+        run: poetry install --no-interaction --no-root
+        if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
       - name: Deploy Image
-        run: bash scripts/build-push.sh
+        run: |
+          source .venv/bin/activate
+          bash scripts/build-push.sh
         env:
           NAME: ${{ matrix.image.name }}
           PYTHON_VERSION: ${{ matrix.image.python_version }}
