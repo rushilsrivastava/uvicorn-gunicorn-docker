@@ -588,6 +588,8 @@ All the image tags, configurations, environment variables and application option
 
 ### Latest Changes
 
+### 0.7.0
+
 * 👷🏽 Convert build scripts to use poetry. PR [#6](https://github.com/rushilsrivastava/uvicorn-gunicorn-docker/pull/6) by [@rushilsrivastava](https://github.com/rushilsrivastava).
 * ✅ Add tests, update args. PR [#5](https://github.com/rushilsrivastava/uvicorn-gunicorn-docker/pull/5) by [@rushilsrivastava](https://github.com/rushilsrivastava).
 * 🐛 Convert env to args. PR [#4](https://github.com/rushilsrivastava/uvicorn-gunicorn-docker/pull/4) by [@rushilsrivastava](https://github.com/rushilsrivastava).
@@ -598,6 +600,7 @@ All the image tags, configurations, environment variables and application option
 * ✏️ Fix typo (type annotation) in tests. PR [#55](https://github.com/tiangolo/uvicorn-gunicorn-docker/pull/55) by [@tiangolo](https://github.com/tiangolo).
 * 👷 Add GitHub Action latest-changes, update issue-manager, add funding. PR [#53](https://github.com/tiangolo/uvicorn-gunicorn-docker/pull/53) by [@tiangolo](https://github.com/tiangolo).
 * ⬆️ Install uvicorn[standard] to include uvloop and Gunicorn support. PR [#54](https://github.com/tiangolo/uvicorn-gunicorn-docker/pull/54) by [@tiangolo](https://github.com/tiangolo).
+
 ### 0.6.0
 
 * Add docs about installing and pinning dependencies. PR [#41](https://github.com/tiangolo/uvicorn-gunicorn-docker/pull/41).
