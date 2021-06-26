@@ -17,7 +17,7 @@ def verify_container(container: DockerClient) -> None:
     assert "Uvicorn running on http://127.0.0.1:80" in logs
 
 
-def test_env_vars_2() -> None:
+def test_env_bind() -> None:
     name = os.getenv("NAME")
     image = f"rushilsrivastava/uvicorn-gunicorn:{name}"
     sleep_time = int(os.getenv("SLEEP_TIME", 1))
@@ -26,10 +26,14 @@ def test_env_vars_2() -> None:
     container = client.containers.run(
         image,
         name=CONTAINER_NAME,
-        environment={"HOST": "127.0.0.1"},
-        ports={"80": "8000"},
-        detach=True,
+        environment={
+            "HOST": "127.0.0.1",
+            "MAX_WORKERS": "1",
+            "UVICORN_ARGS": "--reload-dir app",
+        },
+        ports={"8080": "8000"},
         command="/start-reload.sh",
+        detach=True,
     )
     time.sleep(sleep_time)
     verify_container(container)
