@@ -465,11 +465,23 @@ docker run -d -p 80:8080 -e GUNICORN_CMD_ARGS="--keyfile=/secrets/key.pem --cert
 
 **Note**: instead of handling TLS/SSL yourself and configuring it in the container, it's recommended to use a "TLS Termination Proxy" like [Traefik](https://docs.traefik.io/). You can read more about it in the [FastAPI documentation about HTTPS](https://fastapi.tiangolo.com/deployment/#https).
 
+#### `UVICORN_ARGS`
+
+Any additional command line settings for Uvicorn can be passed in the `UVICORN_ARGS` environment variable.
+
+Read more about it in the [Uvicorn docs: Settings](https://www.uvicorn.org/settings/).
+
+For example, if you have only one directory you want to watch for reloading, you could set [`--reload-dir`](https://www.uvicorn.org/settings/#development) to the directory, for example:
+
+```bash
+docker run -d -p 80:8080 -e UVICORN_ARGS="--reload-dir=/app" myimage
+```
+
 #### `PRE_START_PATH`
 
 The path where to find the pre-start script.
 
-By default, set to `/app/prestart.sh`.
+By default, set to `/prestart.sh`. The image will check these paths first: `/app/prestart.sh`, `/app/app/prestart.sh`, `/app/scripts/prestart.sh`, and `/app/app/scripts/prestart.sh`.
 
 You can set it like:
 
@@ -489,11 +501,11 @@ You can override it by including a file in:
 * `/app/app/gunicorn_conf.py`
 * `/gunicorn_conf.py`
 
-### Custom `/app/prestart.sh`
+### Custom `/prestart.sh`
 
 If you need to run anything before starting the app, you can add a file `prestart.sh` to the directory `/app`. The image will automatically detect and run it before starting everything.
 
-For example, if you want to add Alembic SQL migrations (with SQLALchemy), you could create a `./app/prestart.sh` file in your code directory (that will be copied by your `Dockerfile`) with:
+For example, if you want to add Alembic SQL migrations (with SQLALchemy), you could create a `./prestart.sh` file in your code directory (that will be copied by your `Dockerfile`) with:
 
 ```bash
 #! /usr/bin/env bash
