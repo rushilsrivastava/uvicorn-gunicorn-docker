@@ -11,6 +11,7 @@ client = docker.from_env()
 
 def verify_container(container: DockerClient) -> None:
     logs = get_logs(container)
+    print(logs)
     assert "Checking for prestart script" in logs
     assert "Running script /prestart.sh" in logs
     assert "Running inside /prestart.sh, you could add migrations to this file" in logs

@@ -14,7 +14,11 @@ HOST=${HOST:-0.0.0.0}
 PORT=${PORT:-80}
 LOG_LEVEL=${LOG_LEVEL:-info}
 UVICORN_ARGS=${UVICORN_ARGS:---}
-UVICORN_ARGS=(${UVICORN_ARGS})
+
+# Set args for Uvicorn
+set -f
+set -- $UVICORN_ARGS
+set +f
 
 # If there's a prestart.sh script in the / directory or other path specified, run it before starting
 echo "Checking for prestart script"
@@ -41,4 +45,4 @@ else
 fi
 
 # Start Uvicorn with live reload
-exec uvicorn "$APP_MODULE" --reload --host $HOST --port $PORT --log-level $LOG_LEVEL "${UVICORN_ARGS[@]}"
+exec uvicorn "$APP_MODULE" --reload --host $HOST --port $PORT --log-level $LOG_LEVEL "$@"
